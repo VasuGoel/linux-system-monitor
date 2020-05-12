@@ -26,7 +26,7 @@ double Process::CpuUtilization() {
     long total_time = utime_ + stime_ + cutime_ + cstime_;
     double seconds = uptime - (double)(starttime_ / HERTZ_);
     double utilization = ((double)(total_time / HERTZ_) / seconds);
-    return (utilization > 1) ? 1 : utilization;
+    return utilization;
 }
 
 // Return this process's memory utilization
